@@ -1,61 +1,82 @@
-## Kruger Challenge
+Aquí tienes el README con el formato Markdown para GitHub:
 
-En esta aplicación me he enfocado en desarrollar el front-end para una aplicación web enfocada a registrar el estado de vacunación de los empleados de Kruger Corporation.
+```markdown
+# VacApp
 
-Especificaciones:
+VacApp es una aplicación para gestionar la información de vacunación de usuarios.
 
-- Se desarrolló un back-end para servir todos los datos necesarios, se uso Express.js, Mongoose y MongoDB como tecnologías principales.
-- En el front-end se uso React.js para los diferentes componentes y pantallas de la aplicación, como store de datos se utilizó Redux y React-Router para manejar las rutas.
-- El rol de `Administrador` tiene acceso a un menú que le permite visualizar a todos los empleados registrados y editar su información, tambien puede registrar nuevos empleados en la aplicación.
-- Como usuario normal, tenemos acceso para visualizar y editar nuestra información.
-- Cuando un `Administrador` registra un nuevo empleado, automaticamente se crea un usuario y contraseña, el usuario se crea a partir de las dos primeras letras de su primer nombre más su primer apellido y la contraseña es su número de cedula.
+## Requisitos previos
 
-## Demo
+Antes de comenzar, asegúrate de tener instalado lo siguiente en tu sistema:
 
-https://kruger-vaccineapp.herokuapp.com/
+- Node.js: [Descargar e instalar Node.js](https://nodejs.org/)
+- PostgreSQL: [Descargar e instalar PostgreSQL](https://www.postgresql.org/download/)
 
-## Instalación local
+## Configuración
 
-Para empezar a probar la aplicación de forma local en nuesto computador, es necesario seguir los siguientes pasos.
+1. Clona este repositorio en tu máquina local:
 
-### Requisitos
-
-- Node.js y npm
-- git
-- Cluster gratuito en mongoDB Atlas: https://www.mongodb.com/basics/clusters/mongodb-cluster-setup
-
-### Installation
-
-1. Clonar el repositorio.
-   ```sh
-   git clone https://github.com/bmbravo/KrugerChallenge.git
+   ```bash
+   git clone https://github.com/tu-usuario/VacApp.git
    ```
-2. Instalar los paquetes de NPM en la carpeta principal y en la carpeta frontend.
-   ```sh
+
+2. Ve al directorio del repositorio:
+
+   ```bash
+   cd VacApp
+   ```
+
+3. Instala las dependencias tanto para el backend como para el frontend:
+
+   ```bash
+   cd backend
+   npm install
+   cd ../frontend
    npm install
    ```
-3. Creamos un archivo .env en la carpeta principal y usamos la siguiente configuración.
 
-   ```sh
-   NODE_ENV = development
-   PORT = 5000
-   CLIENT_URL = http://localhost:3000
+4. Crea un archivo `.env` en el directorio `backend` con la siguiente información, reemplazando los valores según corresponda:
 
-   MONGO_URI = <your mongo connection string goes here>
-
-   JWT_SECRET = <your secret goes here>
-   JWT_EXPIRE = 10d
+   ```plaintext
+   DB_DATABASE=nombre_de_tu_base_de_datos
+   DB_USERNAME=usuario_de_postgres
+   DB_PASSWORD=password_de_postgres
+   DB_HOST=localhost
    ```
 
-4. Llenamos la base de datos con datos de prueba, en la ruta principal corremos el siguiente comando.
-   ```sh
-   npm run data:import
+## Levantar la aplicación
+
+### Backend
+
+1. Desde el directorio `backend`, inicia el servidor:
+
+   ```bash
+   npm start
    ```
-5. Corremos el proyecto con el siguiente comando en la carpeta principal.
-   ```sh
-   npm run dev
+
+   Esto iniciará el servidor backend en el puerto 5000 por defecto.
+
+### Frontend
+
+1. Desde el directorio `frontend`, inicia la aplicación:
+
+   ```bash
+   npm start
    ```
-6. Usamos las siguientes credenciales para iniciar sesion como administrador.
-   ```sh
-   admin:admin
-   ```
+
+   Esto iniciará la aplicación frontend y se abrirá en tu navegador por defecto.
+
+## Uso
+
+Una vez que la aplicación esté en funcionamiento, puedes acceder a ella desde tu navegador en la dirección [http://localhost:3000](http://localhost:3000).
+
+## Contribuir
+
+Si deseas contribuir a este proyecto, puedes hacerlo mediante la creación de pull requests. Te agradecemos mucho tus contribuciones.
+
+## Problemas
+
+Si encuentras algún problema con la aplicación, por favor abre un issue en el repositorio para que podamos solucionarlo.
+```
+
+¡Espero que esto sea útil para tu proyecto! Si necesitas más ayuda, no dudes en preguntar.
